@@ -38,7 +38,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-
+    <uses-feature android:name="android.hardware.touchscreen"
+        android:required="false" />
     <application
         android:name="org.monora.uprotocol.client.android.App"
         android:allowBackup="true"
@@ -48,7 +49,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrebleShot"
         tools:ignore="GoogleAppIndexingWarning">
-
+        android:banner="@drawable/banner" >
         <activity
             android:name="org.monora.uprotocol.client.android.activity.HomeActivity"
             android:label="@string/app_name"
@@ -76,6 +77,10 @@
                 <data android:pathPattern=".*\\.tshare" />
                 <data android:pathPattern=".*\\.tshare\\.*" />
                 <data android:pathPattern=".*\\..*\\.tshare" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
 
